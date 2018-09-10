@@ -10,9 +10,11 @@ section{
 #text1{
 	  position:absolute; width:250px; height:140px;
 	  font-size: 130px;
+	        top:5px;
 		left:390px;
 		font-family: UD Digi Kyokasho NP-B;
 		line-height:100%;
+	  overflow:hidden;
 }
 
 div{
