@@ -19,7 +19,7 @@ function saveImage() {
 function redraw() {
   var text = textbox.value;
   ctx.fillStyle = "black";
-  ctx.fillText(text, canvas.width, canvas.height);
+  ctx.fillText(text, 50, 50);
 }
 
 
