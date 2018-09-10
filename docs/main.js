@@ -7,9 +7,9 @@ window.onload = function () {
 };
 
 function redraw() {
-  ctx.textAlign="start"
+  ctx.textAlign="left"
   ctx.fillStyle = "black"
-  ctx.font = "140px UD Digi Kyokasho NP-B";
+  ctx.font = "140px 'UD Digi Kyokasho NP-B'";
   ctx.fillText(textbox, canvas.width, canvas.height);
   var img = new Image();
     img.onload = function() {
