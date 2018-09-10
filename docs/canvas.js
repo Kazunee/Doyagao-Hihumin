@@ -87,10 +87,6 @@ Canvas.prototype.redrawTop = function () {
   const y     = 100;
   const order = SETTINGS.BACKGROUND_ORDER();
   this.drawer.redrawTop(text, x, y, order);
-  if (SETTINGS.TEXT_ORDER() === "image")
-    this.redrawImage();
-  else
-    this.redrawBottom();
 }
 
 Canvas.prototype.redrawImage = function(offsetX) {
