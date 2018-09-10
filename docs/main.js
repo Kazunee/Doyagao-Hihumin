@@ -1,26 +1,36 @@
-var canvas, ctx, textbox;
+/* globals Canvas */
+var _canvas = null;
 
 window.onload = function () {
-canvas = document.getElementById("canvas");
-textbox = document.getElementById("textbox");
-ctx = canvas.getContext('2d');
-ctx.font = "140px UD Digi Kyokasho NP-B";
+  var canvas = document.getElementById("canvas");
+  _canvas = new Canvas(canvas);
+
+  var radios = document.querySelectorAll('input[type=radio][name="text-order"]');
+  Array.prototype.forEach.call(radios, function (radio) {
+    radio.addEventListener('change', onToggle1);
+  });
+
+  var radios = document.querySelectorAll('input[type=radio][name="background-order"]');
+  Array.prototype.forEach.call(radios, function (radio) {
+    radio.addEventListener('change', onToggle2);
+  });
 };
 
-function saveImage() {
-  var a = document.createElement("a");
-  a.href = canvas.toDataURL("image/png");
-  a.setAttribute("download", "image.png");
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
+function onToggle1(e) {
+  var textboxBottom = document.getElementById('textboxBottom');
+  var labelBottom = document.getElementById('labelBottom');
+  
+  if (this.value === 'image') {
+    textboxBottom.style.display = "none";
+    labelBottom.style.display = "none";
+    _canvas.redrawImage();
+  } else {
+    textboxBottom.style.display = "inline";
+    labelBottom.style.display = "inline";
+    _canvas.redrawBottom();
+  }
 }
 
-function redraw() {
-  var text = textbox.value;
-  ctx.fillStyle = "black";
-  ctx.fillText(text, 50, 50);
+function onToggle2(e) {
+  _canvas.redrawTop();
 }
-
-
-
