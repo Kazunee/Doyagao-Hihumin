@@ -17,7 +17,7 @@ window.onload = function () {
         ctx.fillText("見出しテキスト", canvas.width/2, canvas.height);
         fld1.value = canvas.toDataURL();
     };
-    img.src = "photo.png";
+    img.src = "https://s3-ap-northeast-1.amazonaws.com/alserver.jp/media_attachments/files/000/068/987/original/3dfdf98d851f4dfe.png";
 };
 
 function saveImage() {
