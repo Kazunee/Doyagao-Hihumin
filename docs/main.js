@@ -26,7 +26,7 @@ function redraw() {
     ctx.fillStyle = "blue";
     ctx.fillRect(0, 460, canvas.width, 60);
     ctx.textAlign="right"
-    ctx.fillStyle = "black
+    ctx.fillStyle = "black"
     ctx.font = "140px UD Digi Kyokasho NP-B";
     ctx.fillText(str, canvas.width/2, canvas.height);
 }
