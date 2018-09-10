@@ -6,7 +6,7 @@
 			text: 'sample',
 			textset:{
 				fillStyle: '#000',
-				font: "14px 'arial'",
+				font: "130px UD Digi Kyokasho NP-B",
 				textAling: 'left',
 				textBaseline: 'top',
 				x: 10,
