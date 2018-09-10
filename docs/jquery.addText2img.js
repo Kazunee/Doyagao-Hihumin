@@ -1,8 +1,8 @@
-(function($){
+(function(jQuery){
 
-	$.fn.addText2img = function(options) {
+	jQuery.fn.addText2img = function(options) {
 
-		var _opt = $.extend({
+		var _opt = jQuery.extend({
 			text: 'sample',
 			textset:{
 				fillStyle: '#000',
@@ -33,12 +33,12 @@
 		 */
 		return this.each(function(){
 
-			$this = $(this);
+			$this = jQuery(this);
 
 			// 作業用キャンバスを作成
 			i++;
-			$('body').append('<canvas style="display:none;"></canvas>');
-			var $canvas = $('canvas')[i - 1];
+			jQuery('body').append('<canvas style="display:none;"></canvas>');
+			var $canvas = jQuery('canvas')[i - 1];
 
 			/*
 			 * 画像設定
