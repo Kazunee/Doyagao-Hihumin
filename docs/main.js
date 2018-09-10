@@ -4,7 +4,7 @@ window.onload = function () {
   canvas = document.getElementById("canvas");
   textbox = document.getElementById("textbox");
   ctx = canvas.getContext('2d');
-  ctx.font = '100px UDデジタル教科書体NP-B';
+  ctx.font = '100px UD Digi Kyokasho NP-B';
   ctx.lineJoin = 'round';
 };
 
