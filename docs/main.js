@@ -12,10 +12,10 @@ window.onload = function () {
 };
 
 function redraw() {
-    ctx.fillRect(0, 460, canvas.width, 60);
+    ctx.fillRect(0, 0, 200, 140);
     ctx.textAlign="center"
     ctx.fillStyle = "black"
-    ctx.font = "50px UD Digi Kyokasho NP-B";
+    ctx.font = "140px UD Digi Kyokasho NP-B";
     ctx.fillText(textbox, canvas.width, canvas.height);
 }
 
