@@ -12,7 +12,8 @@ section{
 	  font-size: 130px;
 	        top:5px;
 		left:390px;
-		font-family: UD Digi Kyokasho NP-B;
+		/*font-family: UD Digi Kyokasho NP-B;*/
+	        font-family: 'ＭＳ Ｐゴシック';
 		line-height:100%;
 	  overflow:hidden;
 }
