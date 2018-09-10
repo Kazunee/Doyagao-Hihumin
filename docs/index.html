@@ -11,9 +11,9 @@
 </head>
 
 <script>
-$(function(){
+jQuery(function(){
 
-	$('#reset').hide();
+	jQuery('#reset').hide();
 
 	var loc = [{top:30,left:50},{top:50,left:60},{top:20,left:60},{top:60,left:35}];
 
@@ -23,44 +23,44 @@ $(function(){
 	var weight = "normal";
 	var align = "left";
 
-	$("[name=font]").change(function(){
-		font = $('[name=font] option:selected').text();
-		$('#text1').css('font-family',font);
+	jQuery("[name=font]").change(function(){
+		font = jQuery('[name=font] option:selected').text();
+		jQuery('#text1').css('font-family',font);
 	});
 
-	$("[name=size]").change(function(){
-		size = $('[name=size] option:selected').text() + 'px';
-		$('#text1').css('font-size', size);
+	jQuery("[name=size]").change(function(){
+		size = jQuery('[name=size] option:selected').text() + 'px';
+		jQuery('#text1').css('font-size', size);
 	});
 
-	$("[name=weight]").change(function(){
-		weight = $('[name=weight] option:selected').text();
-		$('#text1').css('font-weight', weight);
+	jQuery("[name=weight]").change(function(){
+		weight = jQuery('[name=weight] option:selected').text();
+		jQuery('#text1').css('font-weight', weight);
 	});
 
 	/*
 	* サムネのクリック
 	*/
-	$(".fkds").click(function(){
-		var path = $(this).attr('src');
+	jQuery(".fkds").click(function(){
+		var path = jQuery(this).attr('src');
 		path = path.replace( /-s/g , "");
 
-		$('.addText').attr('src', path);
-		n = $(this).data("fkds");
-		$('#text1').show();
-		$('#text1').css({
+		jQuery('.addText').attr('src', path);
+		n = jQuery(this).data("fkds");
+		jQuery('#text1').show();
+		jQuery('#text1').css({
 			'top':loc[n].top + 'px',
 			'left':loc[n].left + 'px'
 		});
-		$('#make').show();
-		$('#reset').hide();
-		$('.addText').css('border','none');
+		jQuery('#make').show();
+		jQuery('#reset').hide();
+		jQuery('.addText').css('border','none');
 	});
 
 	/*
 	* ジェネレート
 	*/
-	$("#make").click(function(){
+	jQuery("#make").click(function(){
 		var textset = {
 			fillStyle: '#000',
 			font: weight + " " + size + " '" + font + "'",
@@ -71,36 +71,36 @@ $(function(){
 			lineHeight: 5	
 		};
 
-		var text1 = $('#text1').val();
-		$('.addText').addText2img({
+		var text1 = jQuery('#text1').val();
+		jQuery('.addText').addText2img({
 				text:    text1,
 				textset: textset
 		});
 
-		$('#text1').hide();
-		$('#make').hide();
-		$('#reset').show();
+		jQuery('#text1').hide();
+		jQuery('#make').hide();
+		jQuery('#reset').show();
 
-		$('.addText').css('border','dotted 2px #000');
+		jQuery('.addText').css('border','dotted 2px #000');
 	});
 
 	/*
 	* リセット
 	*/
-	$("#reset").click(function(){
+	jQuery("#reset").click(function(){
 			
-		$('.addText').attr('src', 'https://s3-ap-northeast-1.amazonaws.com/alserver.jp/media_attachments/files/000/068/547/small/4402483d4e83f282.png');
+		jQuery('.addText').attr('src', 'https://s3-ap-northeast-1.amazonaws.com/alserver.jp/media_attachments/files/000/068/547/small/4402483d4e83f282.png');
 		n = 0;
-		$('#text1').css({
+		jQuery('#text1').css({
 			'top':loc[n].top,
 			'left':loc[n].left
 		});
 
-		$('canvas').remove();
-		$('#text1').show();
-		$('#make').show();
-		$('#reset').hide();
-		$('.addText').css('border','none');
+		jQuery('canvas').remove();
+		jQuery('#text1').show();
+		jQuery('#make').show();
+		jQuery('#reset').hide();
+		jQuery('.addText').css('border','none');
 	});
 
 });
