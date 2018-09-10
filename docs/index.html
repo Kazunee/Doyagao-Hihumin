@@ -13,8 +13,6 @@
 <script>
 $(function(){
 
-	var loc = [{top:30,left:50},{top:50,left:60},{top:20,left:60},{top:60,left:35}];
-
 	var n = 0;
 	var font = "UD Digi Kyokasho NP-B";
 	var size = "130px";
@@ -27,16 +25,13 @@ $(function(){
 	$("#make").click(function(){
 	        var textset = {
 			fillStyle: '#000',
-			font: weight + " " + size + " '" + font + "'",
 			textAling: 'left',
 			textBaseline: 'top',
-			x: loc[n].left,
-			y: loc[n].top,
 			lineHeight: 5	
 		};
 
 		var text1 = $('#text1').val();
-		$('.addText').addText2img({
+		$('.addText').doya({
 			text:    text1,
 			textset: textset
 		});
