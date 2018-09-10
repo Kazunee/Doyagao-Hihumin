@@ -13,13 +13,11 @@
 <script>
 $(function(){
 
-	$('#reset').hide();
-
 	var loc = [{top:30,left:50},{top:50,left:60},{top:20,left:60},{top:60,left:35}];
 
 	var n = 0;
 	var font = "UD Digi Kyokasho NP-B";
-	var size = "50px";
+	var size = "130px";
 	var weight = "normal";
 	var align = "left";
 
@@ -37,13 +35,12 @@ $(function(){
 			'top':loc[n].top + 'px',
 			'left':loc[n].left + 'px'
 		});
-		$('#make').show();
-		$('#reset').hide();
-		$('.addText').css('border','none');
+                $('#make').show();
+	        $('.addText').css('border','none');
 	});
 
 	/*
-	* ジェネレート
+	* 生成
 	*/
 	$("#make").click(function(){
 	        var textset = {
@@ -64,28 +61,8 @@ $(function(){
 
 		$('#text1').hide();
 		$('#make').hide();
-		$('#reset').show();
 
 		$('.addText').css('border','dotted 2px #000');
-	});
-
-	/*
-	 * リセット
-	 */
-	$("#reset").click(function(){
-			
-		$('.addText').attr('src', 'https://s3-ap-northeast-1.amazonaws.com/alserver.jp/media_attachments/files/000/068/987/original/3dfdf98d851f4dfe.png');
-		n = 0;
-		$('#text1').css({
-			'top':loc[n].top,
-			'left':loc[n].left
-		});
-
-		$('canvas').remove();
-		$('#text1').show();
-		$('#make').show();
-		$('#reset').hide();
-		$('.addText').css('border','none');
 	});
 
 });
@@ -94,16 +71,15 @@ $(function(){
 <body>
   <h1>どや顔ひふみん</h1>
   <p>ひふみんがドヤ顔でカットインをキメるだけのスクリプト</p>
-	
-<section>
-	<button id="make">ジェネレート</button>
-	<button id="reset">リセット</button>
-</section>
 
 <div style="position:relative">
 	<img src="https://s3-ap-northeast-1.amazonaws.com/alserver.jp/media_attachments/files/000/068/987/original/3dfdf98d851f4dfe.png" class="addText" style="position:relative" />
 	<textarea id="text1"></textarea>
 </div>
+	
+<section>
+	<button id="make">生成</button>
+</section>
   
   <p>
     絵＆スクリプト：<a href="https://alserver.jp/@Heyinee" rel="noopener" target="_blank">かず姉</a>
