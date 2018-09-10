@@ -1,10 +1,6 @@
-var canvas, ctx , textbox;
-
-window.onload = function () {
-  canvas = document.getElementById("canvas");
-  textbox = document.getElementById("textbox");
-  ctx = canvas.getContext('2d');
-};
+var canvas = document.getElementById("canvas");
+var textbox = document.getElementById("textbox");
+var ctx = canvas.getContext('2d');
 
 function redraw() {
   ctx.textAlign="left"
