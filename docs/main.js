@@ -6,6 +6,6 @@ window.onload = function () {
   _canvas = new Canvas(canvas);
 };
 
-function onToggle2(e) {
+function onToggle2() {
   _canvas.redrawTop();
 }
