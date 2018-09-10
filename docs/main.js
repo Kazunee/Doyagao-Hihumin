@@ -16,3 +16,9 @@ function saveImage() {
   a.click();
   document.body.removeChild(a);
 };
+
+function redraw() {
+  ctx.setTransform(1,0,0,1,0,0);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.setTransform(1,0,-0.4,1,0,0);
+};
