@@ -12,8 +12,7 @@ window.onload = function () {
 };
 
 function redraw() {
-    ctx.fillRect(0, 0, 200, 140);
-    ctx.textAlign="center"
+    ctx.textAlign="start"
     ctx.fillStyle = "black"
     ctx.font = "140px UD Digi Kyokasho NP-B";
     ctx.fillText(textbox, canvas.width, canvas.height);
