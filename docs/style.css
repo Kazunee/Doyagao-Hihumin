@@ -2,11 +2,7 @@ div{
   display: block;
 }
 
-
-.font-load{
-  font-family: UD Digi Kyokasho NP-B;
-  user-select: none;
-   -moz-user-select: none;
-   -webkit-user-select: none;
-   -ms-user-select: none;
+a{
+  text-decoration: none;
 }
+
