@@ -11,7 +11,7 @@ var Canvas = function(canvas) {
   this.ctx = canvas.getContext('2d');
   this.ctx.lineJoin = 'round';
   this.ctx.lineCap = 'round';
-  this.ctx.fillStyle = 'white';
+  this.ctx.fillStyle = 'black';
   this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
   
   this.offset = {
