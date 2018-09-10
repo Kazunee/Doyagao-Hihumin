@@ -4,19 +4,18 @@ window.onload = function () {
   canvas = document.getElementById("canvas");
   textbox = document.getElementById("textbox");
   ctx = canvas.getContext('2d');
+};
+
+function redraw() {
+  ctx.textAlign="start"
+  ctx.fillStyle = "black"
+  ctx.font = "140px UD Digi Kyokasho NP-B";
+  ctx.fillText(textbox, canvas.width, canvas.height);
   var img = new Image();
     img.onload = function() {
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
     };
     img.src = "https://s3-ap-northeast-1.amazonaws.com/alserver.jp/media_attachments/files/000/068/562/original/46f0eaca010dee0c.png";
-};
-
-function redraw() {
-  textbox = document.getElementById("textbox");
-  ctx.textAlign="start"
-  ctx.fillStyle = "black"
-  ctx.font = "140px UD Digi Kyokasho NP-B";
-  ctx.fillText(this.textbox, canvas.width, canvas.height);
 }
 
 function saveImage() {
