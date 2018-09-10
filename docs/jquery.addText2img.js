@@ -79,7 +79,7 @@
 				});
 
 				// キャンバスを画像として書き出し
-				$this.attr("src", $canvas.toDataURL("image/png"));
+				$this.attr("src", $canvas.toDataURL());
 
 			}
 			
