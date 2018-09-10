@@ -12,9 +12,7 @@ window.onload = function () {
 };
 
 function redraw() {
-  canvas = document.getElementById("canvas");
   textbox = document.getElementById("textbox");
-  ctx = canvas.getContext('2d');
   ctx.textAlign="start"
   ctx.fillStyle = "black"
   ctx.font = "140px UD Digi Kyokasho NP-B";
@@ -23,8 +21,6 @@ function redraw() {
 
 function saveImage() {
   canvas = document.getElementById("canvas");
-  textbox = document.getElementById("textbox");
-  ctx = canvas.getContext('2d');
   var a = document.createElement("a");
   a.href = canvas.toDataURL("image/png");
   a.setAttribute("download", "image.png");
