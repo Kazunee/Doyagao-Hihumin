@@ -1,11 +1,3 @@
-/*
- * jquery.addText2img.js ver 0.1.0
- * Copyright Chaordic Design inc - Yoshiro Akizuki. 
- * http://www.chaordic.co.jp
- * Released under the MIT license - http://en.wikipedia.org/wiki/MIT_License
- */
-
-
 (function($){
 
 	$.fn.doya = function(options) {
