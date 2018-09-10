@@ -45,6 +45,7 @@
 			 */
 			var img = new Image();
 			img.src = $this.attr('src');
+			img.crossOrigin = 'Anonymous';
 
 			/*
 			 * 画像に文字を合成して画像として出力する
