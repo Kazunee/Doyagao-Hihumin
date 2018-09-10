@@ -1,13 +1,11 @@
-var canvas = document.getElementById("canvas");
-var textbox = document.getElementById("textbox");
-var ctx = canvas.getContext('2d');
+var canvas, ctx, textbox;
 
-function redraw() {
-  ctx.textAlign="center"
-  ctx.fillStyle = "black"
-  ctx.font = "140px UD Digi Kyokasho NP-B";
-  ctx.fillText("textbox", canvas.width, canvas.height);
-}
+window.onload = function () {
+canvas = document.getElementById("canvas");
+textbox = document.getElementById("textbox");
+ctx = canvas.getContext('2d');
+ctx.font = "140px UD Digi Kyokasho NP-B";
+};
 
 function saveImage() {
   var a = document.createElement("a");
@@ -17,4 +15,12 @@ function saveImage() {
   a.click();
   document.body.removeChild(a);
 }
+
+function redraw() {
+  var text = textbox.value;
+  ctx.fillStyle = "black";
+  ctx.fillText(text, canvas.width, canvas.height);
+}
+
+
 
