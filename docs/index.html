@@ -11,7 +11,7 @@
 </head>
 
 <script type="text/javascript">
-jQuery(function(){
+$(function(){
 
 	var n = 0;
 	var font = "UD Digi Kyokasho NP-B";
@@ -21,7 +21,7 @@ jQuery(function(){
 	/*
 	* ジェネレート
 	*/
-	jQuery("#make").click(function(){
+	$("#make").click(function(){
 		var textset = {
 			fillStyle: '#000',
 			font: size + " '" + font + "'",
@@ -30,16 +30,16 @@ jQuery(function(){
 			lineHeight: 5	
 		};
 
-		var text1 = jQuery('#text1').val();
-		jQuery('.addText').addText2img({
+		var text1 = $('#text1').val();
+		$('.addText').addText2img({
 				text:    text1,
 				textset: textset
 		});
 
-		jQuery('#text1').hide();
-		jQuery('#make').hide();
+		$('#text1').hide();
+		$('#make').hide();
 
-		jQuery('.addText').css('border','dotted 2px #000');
+		$('.addText').css('border','dotted 2px #000');
 	});
 
 });
