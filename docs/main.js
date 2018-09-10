@@ -4,9 +4,9 @@ var ctx = canvas.getContext('2d');
 
 function redraw() {
   ctx.textAlign="left"
-  ctx.fillStyle = "black"
+  ctx.fillStyle = "blue"
   ctx.font = "140px 'UD Digi Kyokasho NP-B'";
-  ctx.fillText(textbox, canvas.width, canvas.height);
+  ctx.fillText("textbox", canvas.width, canvas.height);
 }
 
 function saveImage() {
