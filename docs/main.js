@@ -12,6 +12,7 @@ function saveImage() {
 function redraw() {
   canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
+    var str = document.info.message.value;
     /* Imageオブジェクトを生成 */
     var img = new Image();
     img.onload = function() {
