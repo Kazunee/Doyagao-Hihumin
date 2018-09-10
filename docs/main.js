@@ -3,9 +3,9 @@ var textbox = document.getElementById("textbox");
 var ctx = canvas.getContext('2d');
 
 function redraw() {
-  ctx.textAlign="left"
-  ctx.fillStyle = "blue"
-  ctx.font = "140px 'UD Digi Kyokasho NP-B'";
+  ctx.textAlign="center"
+  ctx.fillStyle = "black"
+  ctx.font = "140px UD Digi Kyokasho NP-B";
   ctx.fillText("textbox", canvas.width, canvas.height);
 }
 
