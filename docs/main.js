@@ -11,11 +11,6 @@ function redraw() {
   ctx.fillStyle = "black"
   ctx.font = "140px 'UD Digi Kyokasho NP-B'";
   ctx.fillText(textbox, canvas.width, canvas.height);
-  var img = new Image();
-    img.onload = function() {
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-    };
-    img.src = "https://s3-ap-northeast-1.amazonaws.com/alserver.jp/media_attachments/files/000/068/562/original/46f0eaca010dee0c.png";
 }
 
 function saveImage() {
