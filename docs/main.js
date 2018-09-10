@@ -21,4 +21,7 @@ function redraw() {
   ctx.setTransform(1,0,0,1,0,0);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.setTransform(1,0,-0.4,1,0,0);
+  var posx = 70;
+  var posy = 100;
+  var text = textbox.value;
 };
