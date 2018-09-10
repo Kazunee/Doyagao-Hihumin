@@ -8,7 +8,7 @@
 
 (function($){
 
-	$.fn.addText2img = function(options) {
+	$.fn.doya = function(options) {
 
 		var _opt = $.extend({
 			text: 'sample',
