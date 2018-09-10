@@ -16,11 +16,10 @@ function redraw() {
   ctx.textAlign="start"
   ctx.fillStyle = "black"
   ctx.font = "140px UD Digi Kyokasho NP-B";
-  ctx.fillText(textbox, canvas.width, canvas.height);
+  ctx.fillText(this.textbox, canvas.width, canvas.height);
 }
 
 function saveImage() {
-  canvas = document.getElementById("canvas");
   var a = document.createElement("a");
   a.href = canvas.toDataURL("image/png");
   a.setAttribute("download", "image.png");
