@@ -7,38 +7,100 @@
   <title>どや顔ひふみん</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script type="text/javascript" src="doya.js"></script>
+  <script type="text/javascript" src="./jquery.addText2img.js"></script>
 </head>
 
 <script>
 $(function(){
 
+	$('#reset').hide();
+
+	var loc = [{top:30,left:50},{top:50,left:60},{top:20,left:60},{top:60,left:35}];
+
 	var n = 0;
-	var font = "UD Digi Kyokasho NP-B";
-	var size = "130px";
+	var font = "ＭＳ Ｐゴシック";
+	var size = "50px";
 	var weight = "normal";
 	var align = "left";
 
+	$("[name=font]").change(function(){
+		font = $('[name=font] option:selected').text();
+		$('#text1').css('font-family',font);
+	});
+
+	$("[name=size]").change(function(){
+		size = $('[name=size] option:selected').text() + 'px';
+		$('#text1').css('font-size', size);
+	});
+
+	$("[name=weight]").change(function(){
+		weight = $('[name=weight] option:selected').text();
+		$('#text1').css('font-weight', weight);
+	});
+
 	/*
-	* 生成
+	* サムネのクリック
+	*/
+	$(".fkds").click(function(){
+		var path = $(this).attr('src');
+		path = path.replace( /-s/g , "");
+
+		$('.addText').attr('src', path);
+		n = $(this).data("fkds");
+		$('#text1').show();
+		$('#text1').css({
+			'top':loc[n].top + 'px',
+			'left':loc[n].left + 'px'
+		});
+		$('#make').show();
+		$('#reset').hide();
+		$('.addText').css('border','none');
+	});
+
+	/*
+	* ジェネレート
 	*/
 	$("#make").click(function(){
-	        var textset = {
+		var textset = {
 			fillStyle: '#000',
+			font: weight + " " + size + " '" + font + "'",
 			textAling: 'left',
 			textBaseline: 'top',
+			x: loc[n].left,
+			y: loc[n].top,
 			lineHeight: 5	
 		};
 
 		var text1 = $('#text1').val();
-		$('.addText').doya({
-			text:    text1,
-			textset: textset
+		$('.addText').addText2img({
+				text:    text1,
+				textset: textset
 		});
 
 		$('#text1').hide();
 		$('#make').hide();
+		$('#reset').show();
+
 		$('.addText').css('border','dotted 2px #000');
+	});
+
+	/*
+	* リセット
+	*/
+	$("#reset").click(function(){
+			
+		$('.addText').attr('src', 'fukidashi/fkds_1.png');
+		n = 0;
+		$('#text1').css({
+			'top':loc[n].top,
+			'left':loc[n].left
+		});
+
+		$('canvas').remove();
+		$('#text1').show();
+		$('#make').show();
+		$('#reset').hide();
+		$('.addText').css('border','none');
 	});
 
 });
@@ -54,7 +116,29 @@ $(function(){
 </div>
 	
 <section>
+	<select name="font">
+		<option>ＭＳ Ｐゴシック</option>
+		<option>メイリオ</option>
+		<option>ＭＳ Ｐ明朝</option>
+	</select>
+
+	<select name="size">
+		<option>10</option>
+		<option selected>20</option>
+		<option>30</option>
+		<option>40</option>
+		<option>50</option>
+		<option>60</option>
+		<option>70</option>
+		<option>80</option>
+	</select>
+
+	<select name="weight">
+		<option>normal</option>
+		<option>bold</option>
+	</select>
 	<button id="make">生成</button>
+	<button id="reset">リセット</button>
 </section>
   
   <p>
