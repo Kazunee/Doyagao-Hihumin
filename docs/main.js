@@ -9,7 +9,7 @@ window.onload = function () {
     img.onload = function() {
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
     };
-    img.src = "https://s3-ap-northeast-1.amazonaws.com/alserver.jp/media_attachments/files/000/068/987/original/3dfdf98d851f4dfe.png";
+    img.src = "https://s3-ap-northeast-1.amazonaws.com/alserver.jp/media_attachments/files/000/068/562/original/46f0eaca010dee0c.png";
 };
 
 function saveImage() {
@@ -28,5 +28,5 @@ function redraw() {
     ctx.textAlign="center"
     ctx.fillStyle = "black"
     ctx.font = "50px UD Digi Kyokasho NP-B";
-    ctx.fillText("str", canvas.width, canvas.height);
+    ctx.fillText(str, canvas.width, canvas.height);
 }
