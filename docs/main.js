@@ -4,6 +4,9 @@ window.onload = function () {
   canvas = document.getElementById("canvas");
   textbox = document.getElementById("textbox");
   ctx = canvas.getContext('2d');
+  var img = new Image();
+  img.src = "https://s3-ap-northeast-1.amazonaws.com/alserver.jp/media_attachments/files/000/068/987/original/3dfdf98d851f4dfe.png";
+  ctx.drawImage(img, 0, 0);
   ctx.font = '100px serif';
   ctx.lineJoin = 'round';
 };
