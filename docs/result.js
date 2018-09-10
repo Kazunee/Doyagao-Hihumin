@@ -1,7 +1,6 @@
 var fontA = new FontFaceObserver('notobk');
-var fontB = new FontFaceObserver('notoserifbk');
 
-Promise.all([fontA.load(), fontB.load()]).then(function () {
+Promise.all([fontA.load()]).then(function () {
   const queries = window.location.href.split('?')[1];
   const params = {};
 
@@ -26,10 +25,8 @@ Promise.all([fontA.load(), fontB.load()]).then(function () {
     drawer.redrawImage(Number(params.bx), Number(params.by), params.color, function() {
       const result = document.getElementById('result');
       result.src = ctx.canvas.toDataURL("image/png");
-      result2.src = ctx.canvas.toDataURL("image/png");
     });
 
   const result = document.getElementById('result');
   result.src = ctx.canvas.toDataURL("image/png");
-  result2.src = ctx.canvas.toDataURL("image/png");
 });
