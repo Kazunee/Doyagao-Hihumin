@@ -93,14 +93,6 @@ Canvas.prototype.redrawTop = function () {
     this.redrawBottom();
 }
 
-Canvas.prototype.redrawBottom = function (offsetX) {
-  const text  = document.getElementById("textboxBottom").value.replace(/！/, `!`);
-  const x     = (offsetX || this.offset.bottom.x) + 70;
-  const y     = this.offset.bottom.y + 100;
-  const order = SETTINGS.BACKGROUND_ORDER();
-  this.drawer.redrawBottom(text, x, y, order);
-}
-
 Canvas.prototype.redrawImage = function(offsetX) {
   const x     = (offsetX || this.offset.bottom.x) + 70;
   const y     = this.offset.bottom.y;
@@ -116,14 +108,12 @@ Canvas.prototype.newtab = function() {
   const order  = SETTINGS.TEXT_ORDER();
   const color  = SETTINGS.BACKGROUND_ORDER();
   const top    = document.getElementById("textboxTop").value;
-  const bottom = document.getElementById("textboxBottom").value.replace(/！/, `!`);
   const tx     = 70;
   const ty     = 100;
   const bx     = this.offset.bottom.x + 70;
   const by     = this.offset.bottom.y + (order === `text` ? 100 : 0);
   const q      = 
     'top=' + top +
-    '&bottom=' + bottom +
     '&tx=' + tx +
     '&ty=' + ty +
     '&bx=' + bx +
