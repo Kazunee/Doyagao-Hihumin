@@ -6,25 +6,155 @@
   <link href='https://s3-ap-northeast-1.amazonaws.com/alserver.jp/media_attachments/files/000/068/547/small/4402483d4e83f282.png' rel='icon' type='image/x-icon'>
   <title>どや顔ひふみん</title>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="settings.js"></script>
-  <script src="canvas.js"></script>
-  <script src="main.js"></script>
-  <script src="generator.js"></script>
-  <script src="drawer.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./jquety.daya.js"></script>
 </head>
 
+<script>
+$(function(){
+
+	$('#reset').hide();
+
+	var loc = [{top:30,left:50},{top:50,left:60},{top:20,left:60},{top:60,left:35}];
+
+	var n = 0;
+	var font = "ＭＳ Ｐゴシック";
+	var size = "50px";
+	var weight = "normal";
+	var align = "left";
+
+	$("[name=font]").change(function(){
+		font = $('[name=font] option:selected').text();
+		$('#text1').css('font-family',font);
+	});
+
+	$("[name=size]").change(function(){
+		size = $('[name=size] option:selected').text() + 'px';
+		$('#text1').css('font-size', size);
+	});
+
+	$("[name=weight]").change(function(){
+		weight = $('[name=weight] option:selected').text();
+		$('#text1').css('font-weight', weight);
+	});
+
+	/*
+	* サムネのクリック
+	*/
+	$(".fkds").click(function(){
+		var path = $(this).attr('src');
+		path = path.replace( /-s/g , "");
+
+		$('.addText').attr('src', path);
+		n = $(this).data("fkds");
+		$('#text1').show();
+		$('#text1').css({
+			'top':loc[n].top + 'px',
+			'left':loc[n].left + 'px'
+		});
+		$('#make').show();
+		$('#reset').hide();
+		$('.addText').css('border','none');
+	});
+
+	/*
+	* ジェネレート
+	*/
+	$("#make").click(function(){
+	        var textset = {
+			fillStyle: '#000',
+			font: weight + " " + size + " '" + font + "'",
+			textAling: 'left',
+			textBaseline: 'top',
+			x: loc[n].left,
+			y: loc[n].top,
+			lineHeight: 5	
+		};
+
+		var text1 = $('#text1').val();
+		$('.addText').addText2img({
+			text:    text1,
+			textset: textset
+		});
+
+		$('#text1').hide();
+		$('#make').hide();
+		$('#reset').show();
+
+		$('.addText').css('border','dotted 2px #000');
+	});
+
+	/*
+	 * リセット
+	 */
+	$("#reset").click(function(){
+			
+		$('.addText').attr('src', 'fukidashi/fkds_1.png');
+		n = 0;
+		$('#text1').css({
+			'top':loc[n].top,
+			'left':loc[n].left
+		});
+
+		$('canvas').remove();
+		$('#text1').show();
+		$('#make').show();
+		$('#reset').hide();
+		$('.addText').css('border','none');
+	});
+
+});
+</script>
+	
 <body>
   <h1>どや顔ひふみん</h1>
   <p>ひふみんがドヤ顔でカットインをキメるだけのスクリプト</p>
   
-  <div>    
-    <canvas id="canvas" width="600px" height="150px"></canvas>
-  </div>
-  
-  <div>
-    <input type="text" id="textboxTop" size="50" value="" spellcheck="false" oninput="_canvas.redrawTop();">
-	    <button type="button" onclick="_canvas.save();">画像を保存する</button>
-  </div>
+<section>
+	<img src="fukidashi/fkds_1-s.png" class="fkds" data-fkds="0" />
+	<img src="fukidashi/fkds_2-s.png" class="fkds" data-fkds="1" />
+	<img src="fukidashi/fkds_3-s.png" class="fkds" data-fkds="2" />
+	<img src="fukidashi/fkds_4-s.png" class="fkds" data-fkds="3" />
+</section>
+	
+<section>
+	<select name="font">
+		<option>ＭＳ Ｐゴシック</option>
+		<option>メイリオ</option>
+		<option>ＭＳ Ｐ明朝</option>
+        </select>
+
+	<select name="size">
+		<option>10</option>
+		<option selected>20</option>
+		<option>30</option>
+		<option>40</option>
+		<option>50</option>
+		<option>60</option>
+		<option>70</option>
+		<option>80</option>
+	</select>
+
+	<select name="weight">
+		<option>normal</option>
+		<option>bold</option>
+	</select>
+
+	<!--
+	<select name="align">
+		<option>left</option>
+		<option>center</option>
+	</select>
+	-->
+
+	<button id="make">ジェネレート</button>
+	<button id="reset">リセット</button>
+</section>
+
+<div style="position:relative">
+	<img src="fukidashi/fkds_1.png" class="addText" style="position:relative" />
+	<textarea id="text1"></textarea>
+</div>
   
   <p>
     絵＆スクリプト：<a href="https://alserver.jp/@Heyinee" rel="noopener" target="_blank">かず姉</a>
