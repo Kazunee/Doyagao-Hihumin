@@ -58,7 +58,7 @@ $(function(){
 	});
 
 	/*
-	 * ジェネレート
+	 * 生成
 	 */
 	$("#make").click(function(){
 		var textset = {
@@ -109,6 +109,12 @@ $(function(){
 <body>
   <h1>滝本カットイン</h1>
   <p>ひふみんがキメ顔でカットインしてるだけのスクリプト</p>
+  <p>
+    使い方：使用画像を選択した後、テキストボックスに任意の文字を入力して「生成」ボタンを押してください。画像は右クリックから保存できます。なお改行は反映されません。  
+  </p>	
+  <p>
+    ※現時点では日本語二文字程度を表示することしかできません。
+  </p>
   <h3>使用画像を選択</h3>
 	
 <section>
@@ -126,11 +132,7 @@ $(function(){
   <div style="position:relative">
 	<img src="hihumi-cutin.png" class="addText" style="position:relative" />
 	<textarea id="text1">断酒</textarea>
-  </div>
-	
-  <p>
-    使い方：使用画像を選択した後、テキストボックスに任意の文字を入力して「生成」ボタンを押してください。なお改行は反映されません。  
-  </p>	  
+  </div>  
 
   <p>
     絵＆スクリプト：<a href="https://alserver.jp/@Heyinee" rel="noopener" target="_blank">かず姉</a>
