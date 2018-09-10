@@ -23,21 +23,6 @@ $(function(){
 	var weight = "normal";
 	var align = "left";
 
-	$("[name=font]").change(function(){
-		font = $('[name=font] option:selected').text();
-		$('#text1').css('font-family',font);
-	});
-
-	$("[name=size]").change(function(){
-		size = $('[name=size] option:selected').text() + 'px';
-		$('#text1').css('font-size', size);
-	});
-
-	$("[name=weight]").change(function(){
-		weight = $('[name=weight] option:selected').text();
-		$('#text1').css('font-weight', weight);
-	});
-
 	/*
 	* サムネのクリック
 	*/
