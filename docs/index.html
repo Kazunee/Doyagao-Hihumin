@@ -22,24 +22,6 @@ $(function(){
 	var align = "left";
 
 	/*
-	* サムネのクリック
-	*/
-	$(".fkds").click(function(){
-		var path = $(this).attr('src');
-		path = path.replace( /-s/g , "");
-
-		$('.addText').attr('src', path);
-		n = $(this).data("fkds");
-		$('#text1').show();
-		$('#text1').css({
-			'top':loc[n].top + 'px',
-			'left':loc[n].left + 'px'
-		});
-                $('#make').show();
-	        $('.addText').css('border','none');
-	});
-
-	/*
 	* 生成
 	*/
 	$("#make").click(function(){
