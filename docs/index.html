@@ -13,48 +13,12 @@
 <script type="text/javascript">
 jQuery(function(){
 
-	jQuery('#reset').hide();
-
-	var loc = [{top:30,left:50},{top:50,left:60},{top:20,left:60},{top:60,left:35}];
-
 	var n = 0;
 	var font = "ＭＳ Ｐゴシック";
 	var size = "50px";
 	var weight = "normal";
 	var align = "left";
-
-	jQuery("[name=font]").change(function(){
-		font = jQuery('[name=font] option:selected').text();
-		jQuery('#text1').css('font-family',font);
-	});
-
-	jQuery("[name=size]").change(function(){
-		size = jQuery('[name=size] option:selected').text() + 'px';
-		jQuery('#text1').css('font-size', size);
-	});
-
-	jQuery("[name=weight]").change(function(){
-		weight = jQuery('[name=weight] option:selected').text();
-		jQuery('#text1').css('font-weight', weight);
-	});
-
-	/*
-	* サムネのクリック
-	*/
-	jQuery(".fkds").click(function(){
-		var path = jQuery(this).attr('src');
-		path = path.replace( /-s/g , "");
-
-		jQuery('.addText').attr('src', path);
-		n = jQuery(this).data("fkds");
-		jQuery('#text1').show();
-		jQuery('#text1').css({
-			'top':loc[n].top + 'px',
-			'left':loc[n].left + 'px'
-		});
-		jQuery('#make').show();
-		jQuery('#reset').hide();
-		jQuery('.addText').css('border','none');
+	
 	});
 
 	/*
@@ -79,28 +43,8 @@ jQuery(function(){
 
 		jQuery('#text1').hide();
 		jQuery('#make').hide();
-		jQuery('#reset').show();
 
 		jQuery('.addText').css('border','dotted 2px #000');
-	});
-
-	/*
-	* リセット
-	*/
-	jQuery("#reset").click(function(){
-			
-		jQuery('.addText').attr('src', 'https://s3-ap-northeast-1.amazonaws.com/alserver.jp/media_attachments/files/000/068/547/small/4402483d4e83f282.png');
-		n = 0;
-		jQuery('#text1').css({
-			'top':loc[n].top,
-			'left':loc[n].left
-		});
-
-		jQuery('canvas').remove();
-		jQuery('#text1').show();
-		jQuery('#make').show();
-		jQuery('#reset').hide();
-		jQuery('.addText').css('border','none');
 	});
 
 });
@@ -116,29 +60,7 @@ jQuery(function(){
 </div>
 	
 <section>
-	<select name="font">
-		<option>ＭＳ Ｐゴシック</option>
-		<option>メイリオ</option>
-		<option>ＭＳ Ｐ明朝</option>
-	</select>
-
-	<select name="size">
-		<option>10</option>
-		<option selected>20</option>
-		<option>30</option>
-		<option>40</option>
-		<option>50</option>
-		<option>60</option>
-		<option>70</option>
-		<option>80</option>
-	</select>
-
-	<select name="weight">
-		<option>normal</option>
-		<option>bold</option>
-	</select>
 	<button id="make">生成</button>
-	<button id="reset">リセット</button>
 </section>
   
   <p>
