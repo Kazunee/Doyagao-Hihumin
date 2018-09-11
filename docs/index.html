@@ -104,12 +104,10 @@ $(function(){
 	});
 	
 	$('.download a').on('click', function(e){
-          var hrefPath = $(this).attr('href');      
-          var fileName = $(this).attr('href').replace(/\\/g,'/').replace( /.*\//, '' );
           $target = $(e.target);
           $target.attr({
-            download: fileName,
-            href: hrefPath
+            download: "takimoto-cutin.png",
+            href: "src"
           });
         });
 });
@@ -144,7 +142,7 @@ $(function(){
 　<section>
 	<button id="make">生成</button>
 	<button id="reset">リセット</button>
-	<button class="download"><a href="src">保存</a></button>
+	<button><a href="#" class="download">保存</a></button>
   </section>
 
   <hr>
