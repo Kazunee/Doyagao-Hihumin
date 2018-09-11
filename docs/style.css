@@ -1,20 +1,24 @@
+body{
+        background-color: #c1efff;
+}
+
 textarea{
-		margin:0;
-		padding:0;
+	margin:0;
+	padding:0;
 }
 
 section{
-		margin-bottom:20px;
+	margin-bottom:20px;
 }
 
 #text1{
-	  position:absolute; width:220px; height:110px;
-	  font-size: 106px;
-	        top:18px;
-		left:380px;
-		font-family: UD Digi Kyokasho NP-B;
-		line-height:100%;
-	  overflow:hidden;
+	position:absolute; width:220px; height:110px;
+	font-size: 106px;
+	top:18px;
+        left:380px;
+	font-family: UD Digi Kyokasho NP-B;
+	line-height:100%;
+	overflow:hidden;
 }
 
 button{
@@ -23,6 +27,6 @@ button{
 }
 
 a{
-  text-decoration: none;
+        text-decoration: none;
 }
 
