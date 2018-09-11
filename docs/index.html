@@ -102,7 +102,16 @@ $(function(){
 		$('#reset').hide();
 		$('.addText').css('border','none');
 	});
-
+	
+	$('.download a').on('click', function(e){
+          var hrefPath = $(this).attr('href');      
+          var fileName = $(this).attr('href').replace(/\\/g,'/').replace( /.*\//, '' );
+          $target = $(e.target);
+          $target.attr({
+            download: fileName,
+            href: hrefPath
+          });
+        });
 });
 </script>
 	
@@ -135,6 +144,7 @@ $(function(){
 　<section>
 	<button id="make">生成</button>
 	<button id="reset">リセット</button>
+	<button id="download"><a href="img.png">保存</a></button>
   </section>
 
   <hr>
